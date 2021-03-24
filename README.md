@@ -5,7 +5,8 @@ A systemd service to monitor GPU usage and store it in a daily csv.
 The service works with a systemd timer that runs every _N_ minutes. By default,
 _N_ is set to 5, if you want a different throttle, just change it in
 `./gpu_stats.timer`. To install it, just issue `make install` in a shell inside
-the repository folder.
+the repository folder. The script relays on `nvidia-smi`, so it must be
+available in your path and executable by the user installing the systemd service.
 
 # Outputs
 Daily statistics are stored in `$HOME/gpu_stats` on a daily basis, storing one
