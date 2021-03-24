@@ -1,0 +1,10 @@
+[Unit]
+Description=GPU stats every 5 minutes
+
+[Timer]
+OnBootSec=5m
+OnUnitInactiveSec=5m
+
+[Install]
+WantedBy=basic.target
+

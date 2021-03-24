@@ -1,0 +1,7 @@
+[Unit]
+Description=GPU stats service
+
+[Service]
+Type=oneshot
+StandardOutput=null
+ExecStart=/usr/bin/gpu_stats %h

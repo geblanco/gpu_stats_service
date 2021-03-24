@@ -1,0 +1,43 @@
+Recoger cada N <segundos|minutos> metricas de las GPUs.
+Formato de las metricas:
+- uso por GPU, usuario propietario del PID de esa GPU
+
+Ejemplo N = 1 minutos:
+timstamp, user, pid, GPU number, 15% de uso
+timestamp my_user 6458 0 15 
+timestamp my_user 6458 0 35 
+timestamp my_user 6458 0 45 
+timestamp my_user 6458 0 55 
+timestamp my_user 6458 0 15 
+....
+
+Para calcular el uso se hace (N = 1 minutos):
+60N = 1hr
+1 dia = 1440N
+1 mes = 720 hrs = 43200N
+Uso GPU hora por usuario: Desde 0 a 24. <suma 60 %> / 60
+Uso GPU dia por usuario: <suma %> / N / 1440
+Uso GPU mes por usuario: <suma %> / N / 43200
+
+CSV plano para cada dia
+Pickle diario
+Stats diarias:
+
+Uso por dia:
+Hora 0 del dia <usuario> %
+
+Uso por horas:
+0 % Glob % GPU 0 % GPU 1
+1 % Glob % GPU 0 % GPU 1
+2 % Glob % GPU 0 % GPU 1
+3 % Glob % GPU 0 % GPU 1
+4 % Glob % GPU 0 % GPU 1
+5 % Glob % GPU 0 % GPU 1
+6 % Glob % GPU 0 % GPU 1
+7 % Glob % GPU 0 % GPU 1
+....
+
+Uso por semana
+Uso por mes
+
+Horas con menos uso. 
