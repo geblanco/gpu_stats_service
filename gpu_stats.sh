@@ -6,4 +6,4 @@ header="timestamp,user,pid,gpu,usage"
 
 [[ ! -d "${log_dir}" ]] && mkdir -p "${log_dir}"
 [[ ! -f "${log_file}" ]] && echo "${header}" > "${log_file}"
-nvidia-smi -x -q | python gpu_info.py >> "${log_file}"
+nvidia-smi -x -q | gpu_info.py 2>&1 >> "${log_file}"
